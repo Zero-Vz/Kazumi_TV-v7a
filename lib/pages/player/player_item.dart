@@ -33,6 +33,8 @@ class PlayerItemPanel extends StatefulWidget {
     // 新增：一起看回调
     required this.showSyncPlayRoomCreateDialog,
     required this.showSyncPlayEndPointSwitchDialog,
+    required this.showDanmakuDestinationPickerAndSend, // 👈 新增
+    required this.pauseForTimedShutdown,               // 👈 新增
     this.disableAnimations = false,
   });
 
@@ -43,6 +45,8 @@ class PlayerItemPanel extends StatefulWidget {
   // 移除：final Future<void> Function(int shaderIndex) handleSuperResolutionChange;
   final AnimationController animationController;
   final FocusNode keyboardFocus;
+  final void Function(String) showDanmakuDestinationPickerAndSend; // 👈 新增属性声明
+  final VoidCallback pauseForTimedShutdown;                        // 👈 新增属性声明
   final void Function() startHideTimer;
   final void Function() cancelHideTimer;
   final void Function() handleDanmaku;
